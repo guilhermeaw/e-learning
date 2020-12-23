@@ -1,12 +1,24 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import 'react-native-gesture-handler';
 
-// import { Container } from './styles';
+import React from 'react';
+import { StatusBar, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Routes from './routes';
 
 const App: React.FC = () => {
-  return <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%', backgroundColor: '#f5f5f5' }}>
-    <Text style={{ fontSize: 24 }}>Hello world</Text>
-  </View>;
-}
+  return (
+    <NavigationContainer>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#6548A3"
+        translucent
+      />
+      <View>
+        <Routes />
+      </View>
+    </NavigationContainer>
+  );
+};
 
 export default App;
