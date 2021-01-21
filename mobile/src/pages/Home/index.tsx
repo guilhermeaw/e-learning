@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Image } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 
+import { useNavigation } from '@react-navigation/native';
 import logoIcon from '../../assets/logo.png';
 import mathIcon from '../../assets/math.png';
 import physicsIcon from '../../assets/physics.png';
@@ -52,12 +53,24 @@ const Home: React.FC = () => {
     },
   ];
 
+  const { navigate } = useNavigation();
+
+  const handleLogout = useCallback(() => {
+    navigate('Login');
+  }, [navigate]);
+
+  const handleNavigateToCourse = useCallback(() => {
+    navigate('Course');
+  }, [navigate]);
+
   return (
     <Container>
       <Header>
         <HeaderTop>
           <Image source={logoIcon} />
-          <Icon name="power" size={24} color="#FF6680" />
+          <TouchableOpacity onPress={handleLogout}>
+            <Icon name="power" size={24} color="#FF6680" />
+          </TouchableOpacity>
         </HeaderTop>
         <SearchInput placeholder="Busque um curso" />
       </Header>
@@ -74,7 +87,7 @@ const Home: React.FC = () => {
             keyExtractor={item => String(item.id)}
             numColumns={2}
             renderItem={({ item }) => (
-              <CourseCard>
+              <CourseCard onPress={handleNavigateToCourse}>
                 <Image source={item.icon} />
                 <CourseTitle>{item.name}</CourseTitle>
                 <CourseClassesTitle>{item.classes} aulas</CourseClassesTitle>

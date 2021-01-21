@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Login from '../pages/Login';
 import CoursesRouter from './courses.routes';
+import Course from '../pages/Course';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,8 @@ const AppRoutes: React.FC = () => {
       >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Courses" component={CoursesRouter} />
+
+        <Stack.Screen name="Course" component={Course} />
       </Stack.Navigator>
     </NavigationContainer>
   );

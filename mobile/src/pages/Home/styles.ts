@@ -47,7 +47,7 @@ export const CategoriesWrapperCourses = styled.Text`
   color: #a0a0b2;
 `;
 
-export const CategoriesListWrapper = styled.ScrollView`
+export const CategoriesListWrapper = styled.View`
   margin-top: 24px;
 `;
 
@@ -68,7 +68,6 @@ export const CourseTitle = styled.Text`
 `;
 
 export const CourseClassesTitle = styled.Text`
-  color: #6c6c80;
   font-size: 10px;
   color: #c4c4d1;
   margin-top: 4px;
