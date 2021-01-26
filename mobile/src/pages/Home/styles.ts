@@ -50,25 +50,3 @@ export const CategoriesWrapperCourses = styled.Text`
 export const CategoriesListWrapper = styled.View`
   margin-top: 24px;
 `;
-
-export const CourseCard = styled(RectButton)`
-  flex: 1;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 24px;
-  margin: 4px;
-`;
-
-export const CourseTitle = styled.Text`
-  color: #6c6c80;
-  font-size: 15px;
-  line-height: 20px;
-  margin-top: 24px;
-`;
-
-export const CourseClassesTitle = styled.Text`
-  font-size: 10px;
-  color: #c4c4d1;
-  margin-top: 4px;
-`;
