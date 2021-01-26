@@ -24,6 +24,7 @@ import {
   CourseTitle,
   CourseClassesTitle,
 } from './styles';
+import SearchHeader from '../../components/SearchHeader';
 
 const Home: React.FC = () => {
   const categories = [
@@ -55,25 +56,13 @@ const Home: React.FC = () => {
 
   const { navigate } = useNavigation();
 
-  const handleLogout = useCallback(() => {
-    navigate('Login');
-  }, [navigate]);
-
   const handleNavigateToCourse = useCallback(() => {
     navigate('Course');
   }, [navigate]);
 
   return (
     <Container>
-      <Header>
-        <HeaderTop>
-          <Image source={logoIcon} />
-          <TouchableOpacity onPress={handleLogout}>
-            <Icon name="power" size={24} color="#FF6680" />
-          </TouchableOpacity>
-        </HeaderTop>
-        <SearchInput placeholder="Busque um curso" />
-      </Header>
+      <SearchHeader />
 
       <CategoriesWrapper>
         <CategoriesWrapperHeader>
