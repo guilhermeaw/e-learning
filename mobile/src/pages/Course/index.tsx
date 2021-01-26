@@ -29,6 +29,10 @@ interface CourseProps {
 }
 
 const Course: React.FC<CourseProps> = ({ navigation }) => {
+  const handleNavigateToClass = useCallback(() => {
+    navigation.navigate('Class');
+  }, [navigation]);
+
   return (
     <Container>
       <SimpleHeader navigation={navigation} />
@@ -40,7 +44,7 @@ const Course: React.FC<CourseProps> = ({ navigation }) => {
         </CourseWrapperHeader>
 
         <ClassesList>
-          <ClassCard>
+          <ClassCard onPress={handleNavigateToClass}>
             <ClassButton>
               <Icon name="play-circle" size={32} color="#fff" />
             </ClassButton>
