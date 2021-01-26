@@ -1,13 +1,10 @@
 import React, { useCallback } from 'react';
-import { Image } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import {
   Container,
-  Header,
   CourseWrapper,
   CourseWrapperHeader,
   CourseTitle,
@@ -25,30 +22,16 @@ import {
   BadgeText,
 } from './styles';
 
-import logoIcon from '../../assets/logo.png';
+import SimpleHeader from '../../components/SimpleHeader';
 
 interface CourseProps {
   navigation: StackNavigationProp<any>;
 }
 
 const Course: React.FC<CourseProps> = ({ navigation }) => {
-  const handleGoBack = useCallback(() => {
-    navigation.goBack();
-  }, [navigation]);
-
   return (
     <Container>
-      <Header>
-        <TouchableOpacity onPress={handleGoBack}>
-          <Icon name="arrow-left" size={24} color="#FF6680" />
-        </TouchableOpacity>
-
-        <Image source={logoIcon} />
-
-        <TouchableOpacity>
-          <Icon name="heart" size={24} color="#FF6680" />
-        </TouchableOpacity>
-      </Header>
+      <SimpleHeader navigation={navigation} />
 
       <CourseWrapper>
         <CourseWrapperHeader>
