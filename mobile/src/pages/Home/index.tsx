@@ -60,6 +60,7 @@ const Home: React.FC = () => {
           <FlatList
             data={categories}
             keyExtractor={item => String(item.id)}
+            columnWrapperStyle={{ justifyContent: 'space-between' }}
             numColumns={2}
             renderItem={({ item }) => <CourseCard course={item} />}
           />

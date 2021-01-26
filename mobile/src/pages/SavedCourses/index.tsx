@@ -27,21 +27,15 @@ const SavedCourses: React.FC = () => {
     },
     {
       id: 2,
-      name: 'Física',
-      classes: 25,
-      icon: physicsIcon,
+      name: 'Química',
+      classes: 61,
+      icon: chemistryIcon,
     },
     {
       id: 3,
       name: 'Inglês',
       classes: 6,
       icon: englishIcon,
-    },
-    {
-      id: 4,
-      name: 'Química',
-      classes: 61,
-      icon: chemistryIcon,
     },
   ];
 
@@ -57,6 +51,7 @@ const SavedCourses: React.FC = () => {
             data={savedCourses}
             keyExtractor={item => String(item.id)}
             numColumns={2}
+            columnWrapperStyle={{ justifyContent: 'space-between' }}
             renderItem={({ item }) => (
               <CourseCard useExcludeOption course={item} />
             )}

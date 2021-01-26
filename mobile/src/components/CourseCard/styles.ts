@@ -2,17 +2,17 @@ import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
-  flex: 1;
+  width: 50%;
 `;
 
 export const CourseCardWrapper = styled(RectButton)`
-  flex: 1;
   justify-content: center;
   background-color: #fff;
   border-radius: 16px;
   padding: 24px;
   margin: 4px;
   position: relative;
+  height: 172px;
 `;
 
 export const CourseTitle = styled.Text`
